@@ -13,12 +13,13 @@ Actualmente el bot puede:
 
 # 1. Requisitos
 
-Antes de instalar el proyecto necesitas tener instalado:
+Antes de instalar el proyecto necesitas tener instalado y configurado:
 
-- Node.js 18 o superior
-- npm
-- Cuenta en Meta Developers
-- ngrok
+- Node.js 18 o superior (Instalado)
+- Express (Instalado)
+- npm (Instalado)
+- Cuenta en Meta Developers (Cuenta de Meta Developers)
+- ngrok (Instalado)
 
 Tecnologías utilizadas:
 
@@ -32,8 +33,8 @@ Tecnologías utilizadas:
 
 # 2. Clonar el proyecto
 
-git clone https://github.com/tu-usuario/whatsapp-ai-bot.git
-cd whatsapp-ai-bot
+- git@github.com:richard-tabares/pocki-bot.git
+- cd pocki_bot
 
 # 3. Instalar dependencias
 
@@ -42,20 +43,21 @@ npm install
 # 4. Crea un archico .env
 PORT=3000
 
-VERIFY_TOKEN=mi_token_seguro
-
-WHATSAPP_TOKEN=tu_token_de_whatsapp
-PHONE_NUMBER_ID=tu_phone_number_id
-
 OPENAI_API_KEY=tu_openai_api_key
 
-# 5. Iniciar el servidor
+WHATSAPP_TOKEN=tu_token_de_whatsapp_meta
+PHONE_NUMBER_ID=tu_phone_number_id_meta
 
-node --watch src/app.js
+VERIFY_TOKEN=mi_token_seguro_ramdon
 
-# 6. Exponer la API con ngrok
+# 5. Iniciar el servidor node y ngrok para hacerlo publico
 
-ngrok http 3000 y obtenemos su respectiva url publica
+- node --watch src/app.js
+- ngrok http 3000
+
+# 6. Exponer el endpoint final publico con ngrok
+
+- ngrok http 3000 y obtenemos su respectiva url publica Forwarding -> hhtps://ngrok_server/webhook
 
 # 7. Configurar el Webhook en Meta
 
@@ -64,4 +66,4 @@ ngrok http 3000 y obtenemos su respectiva url publica
 - En la parte de configuracion de Meta de estar suscrito a messages para poder que reciba mensajes
 
 # 8. Testing
- - Al numero que te da whatsapp debes enviarle un mensaje de prueba, "Precio dolar", si OpenAI tiene quota, repondera y si no, hara un scrapping directo a la web del dolar configurada.
+ - Al numero que te da whatsapp debes enviarle un mensaje de prueba, "Precio dolar", si OpenAI tiene quota, reponderá y si no, hara un scrapping directo a la web del dolar configurada.
