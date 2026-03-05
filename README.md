@@ -57,7 +57,7 @@ VERIFY_TOKEN=mi_token_seguro_ramdon
 
 # 6. Exponer el endpoint final publico con ngrok
 
-- ngrok http 3000 y obtenemos su respectiva url publica Forwarding -> hhtps://ngrok_server/webhook
+- ngrok http 3000 y obtenemos su respectiva url publica Forwarding -> htps://ngrok_server/dolar
 
 # 7. Configurar el Webhook en Meta
 
@@ -67,3 +67,9 @@ VERIFY_TOKEN=mi_token_seguro_ramdon
 
 # 8. Testing
  - Al numero que te da whatsapp debes enviarle un mensaje de prueba, "Precio dolar", si OpenAI tiene quota, reponderá y si no, hara un scrapping directo a la web del dolar configurada.
+
+
+ ## ENDPOINTS
+
+- Para llamar la API en meta: POST -> https://ngrok_server/dolar
+- Para probar de que el servicios funciona: GET -> https://ngrok_server/dolar
